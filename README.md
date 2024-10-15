@@ -60,3 +60,23 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## About Development
+
+This application was developed with PHP 7.4.6 and composer 1.10.7. The application also was developed using NodeJS 14.16 and NPM 6.14.11.
+
+
+## Project Setup
+```
+composer install
+```
+
+## Run development project
+```
+php artisan serve
+```
+
+## Commands run in development
+```
+composer create-project --prefer-dist laravel/laravel app-controle-tarefas "8.5.9"
+```
