@@ -79,4 +79,12 @@ php artisan serve
 ## Commands run in development
 ```
 composer create-project --prefer-dist laravel/laravel app-controle-tarefas "8.5.9"
+
+composer require laravel/ui:^3.2
+
+php artisan ui bootstrap --auth
+
+npm install
+
+npm run dev
 ```
