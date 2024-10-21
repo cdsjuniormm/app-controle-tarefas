@@ -91,4 +91,6 @@ php artisan ui bootstrap --auth
 npm install
 
 npm run dev
+
+php artisan make:mail MensagemTesteMail --markdown emails.mensagem-teste
 ```
