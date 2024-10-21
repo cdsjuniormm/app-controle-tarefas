@@ -2,6 +2,7 @@
 
 use App\Mail\MensagemTesteMail;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,6 +32,10 @@ Route::resource(
 Route::get(
     '/mensagem-teste',
     function () {
-        return new MensagemTesteMail();
+        $content = new MensagemTesteMail();
+
+        Mail::to('cdsjuniormm@gmail.com')->send($content);
+
+        return $content;
     }
 );
