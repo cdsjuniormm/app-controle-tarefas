@@ -69,6 +69,10 @@ This application was developed with PHP 7.4.6 and composer 1.10.7. The applicati
 ## Project Setup
 ```
 composer install
+
+npm install
+
+npm run dev
 ```
 
 ## Run development project
