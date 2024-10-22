@@ -22,7 +22,11 @@ class TarefaController extends Controller
      */
     public function index()
     {
-        //
+        $tarefas = Tarefa::where('user_id', Auth::user()->id)->get();
+
+        return view('tarefa.index', [
+            'tarefas' => $tarefas
+        ]);
     }
 
     /**
