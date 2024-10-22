@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Tarefa extends Model
 {
     use HasFactory;
+
+    /**
+     * @inheritDoc
+     */
+    protected $fillable = [
+        'descricao',
+        'data_limite'
+    ];
 }
