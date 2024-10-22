@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Notifications\RedefinirSenhaNotification;
+use App\Notifications\VerificarEmailNotification;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -49,5 +50,10 @@ class User extends Authenticatable implements MustVerifyEmail
             $this->email,
             $this->name
         ));
+    }
+
+    public function sendEmailVerificationNotification()
+    {
+        $this->notify(new VerificarEmailNotification($this->name));
     }
 }
