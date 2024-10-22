@@ -25,6 +25,17 @@
                             @endforeach
                         </tbody>
                     </table>
+                    <nav>
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link" href="{{ $tarefas->previousPageUrl() }}">Voltar</a></li>
+
+                            @foreach (range(1, $tarefas->lastPage()) as $page)
+                                <li class="page-item {{ $tarefas->currentPage() == $page ? 'active' : '' }}"><a class="page-link" href="{{ $tarefas->url($page) }}">{{ $page }}</a></li>
+                            @endforeach
+
+                            <li class="page-item"><a class="page-link" href="{{ $tarefas->nextPageUrl() }}">Próxima</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
