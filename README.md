@@ -98,4 +98,6 @@ php artisan vendor:publish
 
 php artisan make:notification RedefinirSenhaNotification
 php artisan make:notification VerificarEmailNotification
+
+php artisan make:mail NovaTarefaMail --markdown emails.tarefa.nova
 ```
