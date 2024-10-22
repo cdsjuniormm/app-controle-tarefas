@@ -95,4 +95,6 @@ npm run dev
 php artisan make:mail MensagemTesteMail --markdown emails.mensagem-teste
 
 php artisan vendor:publish
+
+php artisan make:notification RedefinirSenhaNotification
 ```
