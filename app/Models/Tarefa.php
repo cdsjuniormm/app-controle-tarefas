@@ -13,6 +13,7 @@ class Tarefa extends Model
      * @inheritDoc
      */
     protected $fillable = [
+        'user_id',
         'descricao',
         'data_limite'
     ];
