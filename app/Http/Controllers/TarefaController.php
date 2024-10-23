@@ -103,7 +103,6 @@ class TarefaController extends Controller
      */
     public function update(Request $request, Tarefa $tarefa)
     {
-        self::travarSeNaoPertencerAoUsuario($tarefa->user_id);
 
         $tarefa->update($request->all());
 
@@ -120,7 +119,11 @@ class TarefaController extends Controller
      */
     public function destroy(Tarefa $tarefa)
     {
-        //
+        self::travarSeNaoPertencerAoUsuario($tarefa->user_id);
+
+        $tarefa->delete();
+
+        return redirect()->route('tarefa.index');
     }
 
     /**

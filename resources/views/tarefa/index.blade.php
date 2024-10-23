@@ -29,6 +29,21 @@
                                         >
                                             Editar
                                         </a>
+                                        <a
+                                            href="#"
+                                            class="btn btn-danger btn-sm"
+                                            onclick="document.getElementById('form_destoy_tarefa_{{ $tarefa->id }}').submit()"
+                                        >
+                                            Excluir
+                                        </a>
+                                        <form
+                                            method="post"
+                                            id="form_destoy_tarefa_{{ $tarefa->id }}"
+                                            action="{{ route('tarefa.destroy', ['tarefa'=> $tarefa->id]) }}"
+                                        >
+                                            @csrf
+                                            @method('DELETE')
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach
