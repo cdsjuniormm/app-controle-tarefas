@@ -72,6 +72,8 @@ class TarefaController extends Controller
      */
     public function show(Tarefa $tarefa)
     {
+        self::travarSeNaoPertencerAoUsuario($tarefa->user_id);
+
         return view('tarefa.show', [
             'tarefa' => $tarefa
         ]);
@@ -85,7 +87,11 @@ class TarefaController extends Controller
      */
     public function edit(Tarefa $tarefa)
     {
-        //
+        self::travarSeNaoPertencerAoUsuario($tarefa->user_id);
+
+        return view('tarefa.edit', [
+            'tarefa' => $tarefa
+        ]);
     }
 
     /**
@@ -97,7 +103,13 @@ class TarefaController extends Controller
      */
     public function update(Request $request, Tarefa $tarefa)
     {
-        //
+        self::travarSeNaoPertencerAoUsuario($tarefa->user_id);
+
+        $tarefa->update($request->all());
+
+        return redirect()->route('tarefa.show', [
+            'tarefa' => $tarefa
+        ]);
     }
 
     /**
@@ -109,5 +121,20 @@ class TarefaController extends Controller
     public function destroy(Tarefa $tarefa)
     {
         //
+    }
+
+    /**
+     * Trava visualização e edição de tarefas que pertencem a outro usuário.
+     * (Possível transformar em middleware)
+     *
+     * @param int $userId
+     *
+     * @return void
+     */
+    private static function travarSeNaoPertencerAoUsuario(int $userId)
+    {
+        if ($userId != Auth::user()->id) {
+            abort(404);
+        }
     }
 }
