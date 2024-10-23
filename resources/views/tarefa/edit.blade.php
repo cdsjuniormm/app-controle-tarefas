@@ -33,6 +33,7 @@
                             >
                         </div>
                         <button type="submit" class="btn btn-primary">Salvar</button>
+                        <a href="{{ route('tarefa.index') }}" class="btn btn-secondary">Voltar</a>
                     </form>
                 </div>
             </div>

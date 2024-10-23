@@ -16,7 +16,7 @@
                         <label for="data_limite" class="form-label">Data limite</label>
                         <input type="date" class="form-control" value="{{ $tarefa->data_limite }}" disabled>
                     </div>
-                    <a href="{{ url()->previous() }}" class="btn btn-primary">Voltar</a>
+                    <a href="{{ url()->previous() }}" class="btn btn-secondary">Voltar</a>
                 </div>
             </div>
         </div>

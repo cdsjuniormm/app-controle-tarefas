@@ -5,7 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Tarefas</div>
+                <div class="card-header">
+                    Tarefas
+                    <a class="btn btn-success btn-sm float-right" href="{{ route('tarefa.create') }}">Nova</a>
+                </div>
                 <div class="card-body">
                     <table class="table">
                         <thead>
